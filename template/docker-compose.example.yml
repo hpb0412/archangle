@@ -1,0 +1,37 @@
+version: '3.1'
+services:
+  ghost:
+    image: ghost:alpine
+    restart: always
+    depends_on:
+      - db
+    environment:
+      url: https://archangle.net
+      database__client: mysql
+      database__connection__host: db
+      database__connection__user: root
+      database__connection__password:
+      database__connection__database: ghost
+    volumes:
+      - ./content:/var/lib/ghost/content
+
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD:
+    volumes:
+      - ./mysql:/var/lib/mysql
+
+  nginx:
+    image: nginx:latest
+    restart: always
+    depends_on:
+      - ghost
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./nginx/config:/etc/nginx/conf.d
+      - ./nginx/cert:/etc/letsencrypt/
+      - ./nginx/www:/usr/share/nginx/html

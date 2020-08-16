@@ -1,1 +1,8 @@
 .DS_Store
+content
+config
+mysql
+nginx/cert
+nginx/www
+
+docker-compose.yml
