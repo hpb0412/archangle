@@ -1,0 +1,30 @@
+{
+  "name": "archangle-theme",
+  "description": "A theme for archangle.net theme",
+  "keywords": [
+    "ghost-theme"
+  ],
+  "version": "0.0.2",
+  "engines": {
+    "ghost": ">=3.0.0",
+    "ghost-api": "v3"
+  },
+  "author": {
+    "name": "hpb0412",
+    "email": "hello@archangle.net"
+  },
+  "scripts": {
+    "build": "gulp build",
+    "pack": "gulp pack"
+  },
+  "config": {
+    "posts_per_page": 5
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-hash-filename": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-zip": "^5.0.2",
+    "pump": "^3.0.0"
+  }
+}

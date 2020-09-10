@@ -1,0 +1,20 @@
+{{!< default}}
+
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+{{> "header"}}
+
+{{#post}}
+<main>
+    <div class="content">
+        <article class="{{post_class}}">
+            <p><time>{{date published_at format="DD-MM-YYYY"}}</time> {{tags prefix="• "}}</p>
+            <h1 class="post-title">{{title}}</h1>
+            <div>{{content}}</div>
+        </article>
+    </div>
+</main>
+{{/post}}
+
+{{> "footer"}}
