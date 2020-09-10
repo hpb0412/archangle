@@ -1,0 +1,22 @@
+{
+  "name": "archangle",
+  "version": "0.0.1",
+  "description": "deploy toolsets for archangle blog based on ghost platform",
+  "main": "index.js",
+  "scripts": {
+    "test": "gscan archangle-theme"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hpb0412/archangle.git"
+  },
+  "author": "",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/hpb0412/archangle/issues"
+  },
+  "homepage": "https://github.com/hpb0412/archangle#readme",
+  "devDependencies": {
+    "gscan": "^3.5.6"
+  }
+}

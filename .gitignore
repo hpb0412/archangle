@@ -1,8 +1,7 @@
 .DS_Store
+**/*.zip
 content
-config
+conf.d
 mysql
-nginx/cert
-nginx/www
-
+**/node_modules/
 docker-compose.yml
