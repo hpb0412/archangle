@@ -33,6 +33,6 @@ services:
       - 80:80
       - 443:443
     volumes:
-      - ./nginx/config:/etc/nginx/conf.d
+      - ./nginx/conf.d:/etc/nginx/conf.d
       - /etc/letsencrypt:/etc/letsencrypt
       - /usr/share/nginx/html:/usr/share/nginx/html
