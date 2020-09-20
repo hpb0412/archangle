@@ -13,13 +13,6 @@ html {
   color: #323232;
 }
 
-ol {
-  list-style-position: inside;
-}
-/* ol li {
-  padding-left: 10rem;
-} */
-
 body {
   font-size: 16rem;
 }
@@ -36,12 +29,24 @@ a:hover {
 }
 
 main {
-  margin: 48rem 0;
+  margin: 32rem 0;
+}
+@media (max-width: 900px) {
+  main {
+    margin-top: 0;
+  }
 }
 
 .wrapper {
   max-width: 1170rem;
+  width: 90%;
   margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .wrapper {
+    width: 87%;
+  }
 }
 
 .logo {
@@ -58,54 +63,78 @@ header {
   justify-content: space-between;
 }
 
-header .navigation,
-.social-media {
+@media (max-width: 900px) {
+  header {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 420px) {
+  header {
+    align-items: center;
+  }
+}
+
+.nav {
   list-style: none;
   display: flex;
   justify-content: flex-end;
 }
 
-.navigation * {
+.nav-item {
+  font-size: 20rem;
+  font-weight: 500;
   margin-left: 28rem;
 }
 
-.social-media * {
-  margin-right: 12rem;
+@media (max-width: 900px) {
+  .nav {
+    justify-content: space-between;
+    margin-top: 32rem;
+  }
+  .nav-item {
+    margin: 0;
+  }
 }
 
-nav ul li {
-  font-size: 20rem;
-  font-weight: 500;
+@media (max-width: 420px) {
+  .nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
-main ul {
+.post-thumbnail-list {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
 }
 
-main ul li {
+.post-thumbnail-list li {
   width: 33.333333%;
   padding: 0 15rem;
   flex: 0 0 33.333333%;
-  margin-bottom: 72rem;
+  margin-bottom: 56rem;
 }
 
 @media (max-width: 900px) {
-  main ul li {
+  .post-thumbnail-list li {
     width: 50%;
     flex: 0 0 50%;
+    margin-bottom: 48rem;
   }
 }
 
-@media (max-width: 480px) {
-  main ul li {
+@media (max-width: 420px) {
+  .post-thumbnail-list li {
     width: 100%;
     flex: 0 0 100%;
+    margin-bottom: 36rem;
   }
 }
 
-.post-thumbnail article .img-frame {
+.post-thumbnail article .post-img-frame {
   padding-top: 66.6666667%;
   border-radius: 8rem;
   overflow: hidden;
@@ -124,17 +153,21 @@ main ul li {
   height: 100%;
   object-fit: cover;
   object-position: center;
+  transition: transform 0.5s;
 }
 
-.post-thumbnail .inner {
-  padding: 16rem;
+.post-thumbnail article picture:hover img {
+  transform: scale(1.2);
 }
 
-.post-thumbnail article h1 {
+.post-thumbnail .post-title {
+  padding: 16rem 16rem 0 16rem;
   font-weight: 500;
   font-size: 18rem;
   line-height: 28rem;
-  /* padding: 8rem; */
+}
+.post-thumbnail .inner {
+  padding: 0 16rem;
 }
 
 .post-thumbnail article p {
@@ -161,6 +194,18 @@ main ul li {
   right: 20vw;
 }
 
+@media (max-width: 900px) {
+  .pagination {
+    display: flex;
+    flex-direction: column;
+  }
+  .pagination .newer-posts,
+  .pagination .older-posts {
+    position: static;
+    padding: 16rem;
+  }
+}
+
 footer {
   text-align: center;
 }
@@ -171,41 +216,93 @@ footer p {
 
 /* POST */
 
-.post-title {
-  font-weight: bold;
-  font-size: 40rem;
-  line-height: 48rem;
-  margin-bottom: 48rem;
+.post .post-meta {
+  text-align: center;
 }
 
 .post {
   font-size: 18rem;
   line-height: 28rem;
 }
+@media (max-width: 420px) {
+  .post {
+    font-size: 16rem;
+    line-height: 24rem;
+  }
+}
+
+.post .post-title {
+  font-weight: bold;
+  font-size: 40rem;
+  line-height: 48rem;
+  margin-bottom: 48rem;
+  text-align: center;
+}
+@media (max-width: 420px) {
+  .post .post-title {
+    font-size: 32rem;
+    line-height: 40rem;
+  }
+}
 
 .post h2 {
-  margin: 60rem 0 40rem 0;
+  margin: 56rem 0 40rem 0;
 }
+@media (max-width: 420px) {
+  .post h2 {
+    margin: 48rem 0 32 rem 0;
+  }
+}
+
 .post h3 {
   margin: 48rem 0 32rem 0;
 }
-
-.post figure {
-  margin: 36rem 0;
-}
-.post figcaption {
-  font-size: 14rem;
-  text-align: center;
+@media (max-width: 420px) {
+  .post h3 {
+    margin: 40rem 0 24rem 0;
+  }
 }
 
-.post blockquote,
 .post p {
+  margin: 24rem 0;
   text-align: justify;
+}
+@media (max-width: 420px) {
+  .post p {
+    margin: 16rem 0;
+  }
 }
 
 .post blockquote {
+  text-align: justify;
   padding-left: 24rem;
-  border-left: 5rem solid #0095ff;
+  border-left: 5rem solid #0095ff50;
+}
+@media (max-width: 420px) {
+  .post blockquote {
+    padding-left: 0;
+    border-left-width: 0rem;
+  }
+}
+
+.post figure {
+  margin: 32rem 0;
+}
+@media (max-width: 420px) {
+  .post figure {
+    margin: 24rem 0;
+  }
+}
+
+.post figcaption {
+  padding: 8rem;
+  font-size: 14rem;
+  text-align: center;
+}
+@media (max-width: 420px) {
+  .post figcaption {
+    font-size: 12rem;
+  }
 }
 
 .post cite {
@@ -217,16 +314,28 @@ footer p {
   margin-right: 8rem;
 }
 
-.post p {
-  margin: 24rem 0;
-}
-
 .post sub {
   font-size: 15rem;
 }
+@media (max-width: 420px) {
+  .post sub {
+    font-size: 13rem;
+  }
+}
+
+.post ul,
+.post ol {
+  list-style: none;
+}
 
 .post li {
-  margin: 18rem 0;
+  margin: 4rem 0;
+}
+.post li:before {
+  content: '\2022';
+  width: 16rem;
+  color: #323232;
+  display: inline-block;
 }
 
 .post hr {
