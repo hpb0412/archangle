@@ -1,7 +1,7 @@
 version: '3.1'
 services:
   ghost:
-    image: ghost:alpine
+    image: ghost:5.19.3-alpine
     restart: always
     depends_on:
       - db
@@ -17,7 +17,7 @@ services:
       - ./content:/var/lib/ghost/content
 
   db:
-    image: mysql:5.7
+    image: mysql:8.0.31
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD:
@@ -25,7 +25,7 @@ services:
       - ./mysql:/var/lib/mysql
 
   nginx:
-    image: nginx:latest
+    image: nginx:1.21.6
     restart: always
     depends_on:
       - ghost
